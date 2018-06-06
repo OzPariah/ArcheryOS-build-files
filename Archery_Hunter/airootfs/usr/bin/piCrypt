@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+'''
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <http://www.gnu.org/licenses/>.
+'''
+try:
+        import os, sys, getopt, getpass, shutil, datetime
+        from Crypto.Cipher import AES
+        from Crypto.Hash import SHA256, HMAC
+        from Crypto import Random
+except Exception as err:
+        sys.stderr.write('ERROR -- Dependencies Required:\n\t' + str(err) +'\n')
+        sys.stderr.flush()
+        sys.exit(1)
+
+tar_archive = False
+workingDir = os.getcwd()
+
+## Class creates objects for individual files and encrypts of decrypts
+class EncryptionClass(object):
+    def __init__(self, files):
+        global tar_archive
+        self.EncryptedFiles = []
+        self.DecryptedFiles = []
+        for x in files:
+            if os.path.isfile(x):
+                if x[-4:] == '.enc':
+                    self.EncryptedFiles.append(os.path.join(workingDir,x))
+                    self.DecryptedFiles.append(os.path.join(workingDir,x[:-4]))
+                    if x[-8:-4] == '.tar':
+                        tar_archive = True
+                else:
+                    self.EncryptedFiles.append(os.path.join(workingDir,(x + '.enc')))
+                    self.DecryptedFiles.append(os.path.join(workingDir, x))
+
+            elif os.path.isdir(x):
+                archive_name = str(datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S"))
+                shutil.make_archive(archive_name, 'tar', base_dir=x)
+                self.EncryptedFiles.append(os.path.join(workingDir,(archive_name+'.tar.enc')))
+                self.DecryptedFiles.append(os.path.join(workingDir,(archive_name + '.tar')))
+                shutil.rmtree(x)
+            else:
+                sys.stderr.write('ERROR\n')
+                sys.stderr.flush()
+                sys.exit(1)
+
+
+    ## Encrypts file
+    def Encrypt(self, key):
+        for enc, dec in zip(self.EncryptedFiles, self.DecryptedFiles):
+            hasher = SHA256.new(key.encode('utf-8'))
+            encKey = hasher.digest()
+            chunkSize = 64 * 1024
+            fileSize = str(os.path.getsize(dec)).zfill(16)
+            IV = Random.new().read(16)
+            encryptor = AES.new(encKey, AES.MODE_CBC, IV)
+            with open(dec, 'rb') as infile:
+                with open(enc, 'wb') as outfile:
+                    outfile.write(fileSize.encode('utf-8'))
+                    outfile.write(IV)
+                    outfile.write(encryptor.encrypt(encKey.zfill(64)))
+                    while True:
+                        chunk = infile.read(chunkSize)
+                        if len(chunk) == 0:
+                            break
+                        elif len(chunk) % 16 != 0:
+                            chunk += b' ' * (16 - (len(chunk) % 16))
+                        outfile.write(encryptor.encrypt(chunk))
+
+            with open(dec, "wb") as fp:
+                for i in range(os.path.getsize(dec)):
+                    fp.write("*")
+                fp.close()
+            os.unlink(dec)
+
+    ## Decrypts file
+    def Decrypt(self, key, read):
+        global tar_archive
+        for enc, dec in zip(self.EncryptedFiles, self.DecryptedFiles):
+            hasher = SHA256.new(key.encode('utf-8'))
+            encKey = hasher.digest()
+            chunkSize = 64 * 1024
+            with open(enc, 'rb') as infile:
+                filesize = int(infile.read(16))
+                IV = infile.read(16)
+                old_encKey = infile.read(64)
+                decryptor = AES.new(encKey, AES.MODE_CBC, IV)
+                if not decryptor.decrypt(old_encKey) == encKey.zfill(64):
+                    raise ValueError('Wrong password.')
+                    return
+                if read:
+                    fileContents = ''
+                    while True:
+                        chunk = infile.read(chunkSize)
+                        if len(chunk) == 0:
+                            break
+                        fileContents += decryptor.decrypt(chunk).decode('utf-8')
+                        if len(fileContents) > filesize:
+                            fileContents = fileContents[:filesize]
+                    print(fileContents)
+                else:
+                    with open(dec, 'wb') as outfile:
+                        while True:
+                            chunk = infile.read(chunkSize)
+                            if len(chunk) == 0:
+                                break
+                            outfile.write(decryptor.decrypt(chunk))
+                        outfile.truncate(filesize)
+
+            if not read:
+                os.remove(enc)
+
+            if tar_archive:
+                shutil.unpack_archive(dec, format='tar')
+
+
+def usage():
+    print('''
+\tUsage: piCrypt [options] [arguments]
+
+\tOptions:
+
+\t-h, --help: Shows this help screen.
+\t-e, --encrypt: Sets program to encrypt files.
+\t-d, --decrypt: Sets program to decrypt files.
+\t-r, --read: Prints output of file to screen instead of
+\t\twriting to file (to be used -d, --decrypt).
+
+\tArguments:
+\tArguments passed are file or folder to be encrypted or decrypted.
+\tIf a folder is passed into the encryption option of piCrypt,
+\tit will be archived into a .tar.gz file first, and then encrypted.''')
+
+def printerror(errormsg):
+    print('\n\033[91m{}\033[0m'.format(errormsg))
+    exit(1)
+
+def main(argv):
+    action = None
+    read = False
+    try:
+        opts, args = getopt.getopt(argv, 'hedr',['help', 'encrypt', 'decrypt', 'read'])
+    except getopt.GetoptError as err:
+        usage()
+        printerror(str(err) + '\n')
+
+    for options, arguments in opts:
+        if options in ('-h', '--help'):
+            usage()
+            exit(0)
+        elif options in ('-e', '--encrypt'):
+            action = 'encrypt'
+        elif options in ('-d', '--decrypt'):
+            action = 'decrypt'
+        if options in ('-r', '--read'):
+            read = True
+
+    if len(args) < 1: ## checks there is at least one file to work on
+        usage()
+        printerror('Argument required: folder or file needed to encrypt of decrypt\n')
+    if action == None: ## checks if there is enc or dec option
+        usage()
+        printerror('Option required: either add encryption or decryption option\n')
+
+    crypt = EncryptionClass(args) ## creates Encryption object
+    if action == 'encrypt':
+        password = getpass.getpass('Input encryption password:')
+        crypt.Encrypt(password)
+    elif action == 'decrypt':
+        password = getpass.getpass('Input decryption password:')
+        try:
+            crypt.Decrypt(password, read)
+        except Exception as err:
+            printerror(str(err) + '\n')
+            exit(1)
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

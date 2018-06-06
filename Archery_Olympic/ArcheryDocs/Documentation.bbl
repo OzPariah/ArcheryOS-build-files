@@ -1,0 +1,76 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Wallpape}{online}{}
+      \name{author}{1}{}{%
+        {{hash=66935ed0bb5b509b1ac4c658284bc147}{%
+           family={Icar-u5},
+           familyi={I\bibinithyphendelim u\bibinitperiod}}}%
+      }
+      \strng{namehash}{66935ed0bb5b509b1ac4c658284bc147}
+      \strng{fullhash}{66935ed0bb5b509b1ac4c658284bc147}
+      \strng{bibnamehash}{66935ed0bb5b509b1ac4c658284bc147}
+      \strng{authorbibnamehash}{66935ed0bb5b509b1ac4c658284bc147}
+      \strng{authornamehash}{66935ed0bb5b509b1ac4c658284bc147}
+      \strng{authorfullhash}{66935ed0bb5b509b1ac4c658284bc147}
+      \field{sortinit}{I}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Wallpaper}
+      \verb{urlraw}
+      \verb https://github.com/Icar-u5
+      \endverb
+      \verb{url}
+      \verb https://github.com/Icar-u5
+      \endverb
+    \endentry
+    \entry{i3wm}{online}{}
+      \name{author}{1}{}{%
+        {{hash=6415136289655c54ce8262ceea94f8b1}{%
+           family={Stapelberg},
+           familyi={S\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6415136289655c54ce8262ceea94f8b1}
+      \strng{fullhash}{6415136289655c54ce8262ceea94f8b1}
+      \strng{bibnamehash}{6415136289655c54ce8262ceea94f8b1}
+      \strng{authorbibnamehash}{6415136289655c54ce8262ceea94f8b1}
+      \strng{authornamehash}{6415136289655c54ce8262ceea94f8b1}
+      \strng{authorfullhash}{6415136289655c54ce8262ceea94f8b1}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{i3wm}
+      \field{year}{2009-2017}
+      \verb{urlraw}
+      \verb https://i3wm.org/
+      \endverb
+      \verb{url}
+      \verb https://i3wm.org/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

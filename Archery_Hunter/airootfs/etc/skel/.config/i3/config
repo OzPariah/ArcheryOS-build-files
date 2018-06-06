@@ -1,0 +1,277 @@
+##################
+# i3 CONFIG FILE #
+##################
+
+###---VARIABLES---###
+
+## i3 variables
+font pango: Inconsolata 12
+floating_modifier $mod
+set $mod Mod4
+set $term urxvt
+set $browser firefox
+
+## color variables
+set $white #ffffff
+set $black #000000
+set $dgrey #333333
+set $mgrey #2f343a 
+set $lgrey #888888
+set $blue #3f7de5
+set $red #bd0000
+
+## audio variables
+
+# alsa
+set $volume_up amixer -q sset Master 5%+
+set $volume_down amixer -q sset Master 5%-
+set $volume_mute amixer -q sset Master 0%
+
+# pulse
+#set $volume_up pactl set-sink-volume 0 +5%
+#set $volume_down pactl set-sink-volume 0 -5%
+#set $volume_mute pactl set-sink-volume 0 0%
+
+## Music variables
+# mpc
+set $music_play mpc -q play
+set $music_pause mpc -q pause
+set $music_stop mpc -q stop
+set $music_toggle mpc -q toggle
+set $music_next mpc -q next
+set $music_prev mpc -q pre
+
+###---EXTERNAL SCRIPTS---###
+#Start networkmanager
+exec --no-startup-id nm-applet
+#Autolock screen after 15 minutes
+exec --no-startup-id xautolock -time 15 -locker "mpc pause; betterlockscreen"
+#Start composit manager
+exec --no-startup-id compton -b --backend xrender
+# Set background
+exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id ~/.scripts/polybar_launch
+# Documentation
+exec --no-startup-id zathura ~/Documents/Documentation.pdf
+# hides mouse after certain amount of time
+exec_always --no-startup-id unclutter 
+# Switches Caps and Esc
+#exec_always --no-startup-id xmodmap -e 'clear Lock'
+#exec_always --no-startup-id xmodmap -e 'keycode 135 = Super_R'
+#exec_always --no-startup-id xmodmap -e 'keycode 66 = Escape'
+#exec_always --no-startup-id xmodmap -e 'keycode 9 = Caps_Lock'
+
+## Floating tmux scratchpad for background scripts
+# To be mapped to $mod+o
+for_window [instance="tmux_background"] floating enable
+for_window [instance="tmux_background"] move position center
+for_window [instance="tmux_background"] move scratchpad
+for_window [instance="tmux_background"] sticky enable
+exec --no-startup-id $term -name tmux_background -e tmux
+
+###---Appearence---###
+
+# Floating size defaults
+floating_minimum_size 75 x 50
+floating_maximum_size -1 x -1
+
+# Border size
+new_window pixel 3
+new_float pixel 3
+
+# Gaps size
+gaps inner 10
+gaps outer 10
+
+# Float and center mpv
+for_window [class="mpv"] floating enable
+for_window [class="mpv"] move position center
+
+## Colors
+
+#class                  border  backgr. text    indicat
+client.focused          $dgrey	$blue	$black	$dgrey  
+client.focused_inactive $dgrey	$dgrey	$black	$dgrey 
+client.unfocused        $dgrey	$dgrey	$blue $dgrey
+client.urgent           $red	$red	$black	$red 
+
+client.background       $white
+
+
+###---Alternate modes###
+
+# Power Mode
+set $mode_system [l]ock, [e]xit, [r]eboot, [s]hutdown
+mode "$mode_system" {
+	bindsym l			exec --no-startup-id mpc pause; exec --no-startup-id betterlockscreen -l; mode "default"
+	bindsym e 			exec --no-startup-id i3-msg exit, mode "default"
+	bindsym r 			exec --no-startup-id systemctl reboot, mode "default"
+	bindsym s 			exec --no-startup-id systemctl poweroff, mode "default"  
+	bindsym Return 			mode "default"
+	bindsym Escape 			mode "default"
+}
+	
+###---Basic binding---###
+
+# Move to workspaces
+bindsym $mod+1 			workspace 1
+bindsym $mod+2 			workspace 2
+bindsym $mod+3 			workspace 3
+bindsym $mod+4 			workspace 4
+bindsym $mod+5 			workspace 5
+bindsym $mod+6 			workspace 6
+bindsym $mod+7 			workspace 7
+bindsym $mod+8 			workspace 8
+bindsym $mod+9 			workspace 9
+bindsym $mod+0 			workspace 10
+
+# Move window to workspaces
+bindsym $mod+Shift+1 		move container to workspace 1
+bindsym $mod+Shift+2 		move container to workspace 2
+bindsym $mod+Shift+3 		move container to workspace 3
+bindsym $mod+Shift+4 		move container to workspace 4
+bindsym $mod+Shift+5 		move container to workspace 5
+bindsym $mod+Shift+6 		move container to workspace 6
+bindsym $mod+Shift+7 		move container to workspace 7
+bindsym $mod+Shift+8 		move container to workspace 8
+bindsym $mod+Shift+9 		move container to workspace 9
+bindsym $mod+Shift+0 		move container to workspace 10
+
+# Terminals
+bindsym $mod+Return		exec --no-startup-id $term
+bindsym $mod+Shift+Return	exec --no-startup-id $term -e tmux
+
+bindsym $mod+F1			exec --no-startup-id zathura ~/Documents/Documentation.pdf
+bindsym $mod+Shift+F12		exec $term -e "/abif-master/abif"
+
+# Reboot
+bindsym $mod+Shift+BackSpace	exec --no-startup-id systemctl reboot
+
+# Step though open workspaces
+bindsym $mod+equal 		workspace next
+bindsym $mod+minus 		workspace prev
+
+# Toggle between last workspace
+bindsym $mod+Tab 		workspace back_and_forth
+
+# Change wallpaper
+bindsym $mod+grave 		exec --no-startup-id feh --bg-fill /usr/share/wallpapers/$(ls /usr/share/wallpapers| shuf -n 1)
+
+# Toggle floating focus
+bindsym $mod+space 		focus mode_toggle
+
+# Toggle floating
+bindsym $mod+Shift+space 	floating toggle
+
+
+# STOP/HIDE EVERYTHING
+# pulse
+#bindsym $mod+Shift+Delete 	exec pactl set-sink-volume 0 0% ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
+# alsa
+bindsym $mod+Shift+Delete	exec amixer -q sset Master 0% ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
+
+
+# Focus direction
+bindsym $mod+Left		focus left
+bindsym $mod+Down 		focus down
+bindsym $mod+Up 		focus up
+bindsym $mod+Right 		focus right
+
+# Move window direction
+bindsym $mod+Shift+Left 	move left
+bindsym $mod+Shift+Down 	move down
+bindsym $mod+Shift+Up 		move up
+bindsym $mod+Shift+Right 	move right
+
+
+## Letter binds
+bindsym $mod+a			focus parent
+bindsym $mod+Shift+a		exec pavucontrol
+
+bindsym $mod+b			exec --no-startup-id $browser
+bindsym $mod+Shift+b		bar mode dock
+
+bindsym $mod+c			gaps inner all set 10; gaps outer all set 10
+bindsym $mod+Shift+c		gaps inner all set 0; gaps outer all set 0
+
+bindsym $mod+d			exec rofi -show run
+bindsym $mod+Shift+d		exec rofi -show window
+
+bindsym $mod+e			layout default
+#bindsym $mod+Shift+e		
+
+bindsym $mod+f			fullscreen
+#bindsym $mod+Shift+f
+
+bindsym $mod+g			gaps inner current plus 5
+bindsym $mod+Shift+g		gaps inner current minus 5
+
+bindsym $mod+h			focus left
+bindsym $mod+Shift+h		move left
+
+bindsym $mod+i			exec $term -e 'htop'
+bindsym $mod+Shift+i		resize grow height 10 px
+
+bindsym $mod+j			focus down
+bindsym $mod+Shift+j		move down
+
+bindsym $mod+k			focus up
+bindsym $mod+Shift+k		move up
+
+bindsym $mod+l			focus right
+bindsym $mod+Shift+l		move right
+
+bindsym $mod+m			exec $term -e 'ncmpcpp'
+bindsym $mod+Shift+m		exec --no-startup-id $volume_mute
+
+bindsym $mod+n			gaps outer current plus 5
+bindsym $mod+Shift+n		gaps outer current minus 5
+
+bindsym $mod+o			exec xfce4-appfinder
+bindsym $mod+Shift+o		resize shrink width 10 px
+
+bindsym $mod+p			exec --no-startup-id $music_toggle
+bindsym $mod+Shift+p		exec --no-startup-id scrot
+
+bindsym $mod+q			kill
+bindsym $mod+Shift+q		kill
+
+bindsym $mod+r			exec $term -e 'ranger'
+bindsym $mod+Shift+r		restart
+
+bindsym $mod+s			layout stacking
+bindsym $mod+Shift+s		mode "$mode_system"
+
+bindsym $mod+t			split toggle
+#bindsym $mod+Shift+t		
+
+bindsym $mod+u			exec --no-startup-id mpc next
+bindsym $mod+Shift+u		resize shrink height 10 px
+
+bindsym $mod+v			split v
+bindsym $mod+Shift+v		split h
+
+bindsym $mod+w			layout tabbed
+bindsym $mod+Shift+w		exec $term -e "newsboat"
+
+bindsym $mod+x			exec --no-startup-id mpc pause; exec --no-startup-id betterlockscreen -l
+#bindsym $mod+Shift+x		
+
+bindsym $mod+y			exec --no-startup-id mpc prev
+bindsym $mod+Shift+y		resize grow width 10 px
+
+bindsym $mod+z			[instance="tmux_background"] scratchpad show; move position center
+bindsym $mod+Shift+z		exec --no-startup-id $term -name tmux_background -e tmux
+
+
+###---XF86 buttons---###
+
+# Volume buttons
+bindsym XF86AudioRaiseVolume	exec --no-startup-id $volume_up
+bindsym XF86AudioLowerVolume	exec --no-startup-id $volume_down
+
+# Music buttons
+bindsym XF86AudioPlay		exec --no-startup-id $music_play
+bindsym XF86AudioStop		exec --no-startup-id $music_stop
+bindsym XF86AudioPrev		exec --no-startup-id $music_prev
+bindsym XF86AudioNext		exec --no-startup-id $music_next

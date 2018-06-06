@@ -1,0 +1,18 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'Documentation.blg'
+[46] biber:313> INFO - === Mon Apr 16, 2018, 20:13:39
+[77] Biber.pm:371> INFO - Reading 'Documentation.bcf'
+[195] Biber.pm:857> INFO - Found 2 citekeys in bib section 0
+[216] Biber.pm:3976> INFO - Processing section 0
+[229] Biber.pm:4136> INFO - Looking for bibtex format file 'cite.bib' for section 0
+[229] bibtex.pm:1454> INFO - Reading ascii input as UTF-8
+[230] bibtex.pm:1500> INFO - LaTeX decoding ...
+[233] bibtex.pm:1316> INFO - Found BibTeX data source 'cite.bib'
+[238] Utils.pm:193> WARN - year field '2009-2017' in entry 'i3wm' is not an integer - this will probably not sort properly.
+[254] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[254] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[254] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[254] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[263] bbl.pm:617> INFO - Writing 'Documentation.bbl' with encoding 'ascii'
+[264] bbl.pm:720> INFO - Output to Documentation.bbl
+[264] Biber.pm:110> INFO - WARNINGS: 1

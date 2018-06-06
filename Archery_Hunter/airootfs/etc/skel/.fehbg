@@ -1,0 +1,2 @@
+#!/bin/bash
+'feh' '--bg-scale' '/usr/share/wallpapers/ArcheryOS_v0.1.png'
