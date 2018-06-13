@@ -9,19 +9,26 @@
 ;=====================================================
 
 [colors]
-background = #212121
-;background = #00000000
+;background = #212121
+background = #00000000
 background-alt = #444
 foreground = #ffffff
 foreground-alt = #555
 alert = #BB0B18
 col = #00f
-blue = #3f7de5
+;fg = ${xrdb:color7}
+;bg = ${xrdb:color2}
+orange = #6B1B00
 
 [bar/example]
+;monitor = ${env:MONITOR:HDMI-1}
+;monitor = ${env:MONITOR}
 monitor = ${env:MONITOR:LVDS-1}
 width = 100%
 height = 24
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
@@ -46,10 +53,20 @@ font-2 = Wuncon Siji:pixelsize=9;1
 #modules-left = i3
 modules-left = i3 mpd
 #modules-center = date
-modules-right = filesystem volume wlan eth eth2 battery temperature memory cpu date
+modules-right = data filesystem volume wlan eth battery temperature memory cpu date
 
 tray-position = right
 tray-padding = 0
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -64,16 +81,25 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#3f7de5}Root%{F-}: %percentage_used%%
+label-mounted = %{F#BB0B18}Root%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+[module/data]
+type = internal/fs
+interval = 25
+
+mount-0 = /mnt/data
+
+label-mounted = %{F#BB0B18}Data%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.blue}
+label-focused-underline= ${colors.orange}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -102,9 +128,8 @@ label-mode-foreground = ${colors.foreground}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background}
-;label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${colors.blue}
+label-focused-background = #1D1D1D
+label-focused-underline = ${colors.orange}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -119,9 +144,10 @@ label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
-label-urgent-background = ${colors.background}
+label-urgent-background = #1D1D1D
 label-urgent-underline = ${colors.alert}
 label-urgent-padding = 2
+
 
 [module/mpd]
 type = internal/mpd
@@ -135,14 +161,14 @@ label-song-ellipsis = true
 type = internal/cpu
 interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.blue}
+format-underline = ${colors.orange}
 label = CPU: %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.blue}
+format-underline = ${colors.orange}
 label = Mem: %percentage_used%%
 
 [module/wlan]
@@ -151,7 +177,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = Wifi: <label-connected>
-format-connected-underline = ${colors.blue}
+format-connected-underline = ${colors.orange}
 ;format-connected-underline = #9f78e1
 label-connected = %essid% %local_ip%
 
@@ -167,22 +193,7 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-format-connected-underline = ${colors.blue}
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = Eth: %local_ip%
-
-format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
-label-disconnected = no eth
-label-disconnected-foreground = ${colors.foreground-alt}
-
-
-[module/eth2]
-type = internal/network
-interface = enp0s3
-interval = 3.0
-
-format-connected-underline = ${colors.blue}
+format-connected-underline = ${colors.orange}
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = Eth: %local_ip%
 
@@ -210,7 +221,7 @@ time = " at %I:%M%p"
 
 ;format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.blue}
+format-underline = ${colors.orange}
 ;format-underline = #0a6cf5
 
 label = %date% %time%
@@ -227,13 +238,13 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.blue}
-bar-volume-foreground-1 = ${colors.blue}
-bar-volume-foreground-2 = ${colors.blue}
-bar-volume-foreground-3 = ${colors.blue}
-bar-volume-foreground-4 = ${colors.blue}
-bar-volume-foreground-5 = ${colors.blue}
-bar-volume-foreground-6 = ${colors.blue}
+bar-volume-foreground-0 = ${colors.orange}
+bar-volume-foreground-1 = ${colors.orange}
+bar-volume-foreground-2 = ${colors.orange}
+bar-volume-foreground-3 = ${colors.orange}
+bar-volume-foreground-4 = ${colors.orange}
+bar-volume-foreground-5 = ${colors.orange}
+bar-volume-foreground-6 = ${colors.orange}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
@@ -252,7 +263,7 @@ full-at = 98
 format-title = "Battery:"
 
 format-charging = Battery: <label-charging>
-format-charging-underline = ${colors.blue}
+format-charging-underline = ${colors.orange}
 
 ;format-discharging = <label-discharging>
 format-discharging = Battery: <label-discharging>
@@ -268,7 +279,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = Temp: <label>
-format-underline = ${colors.blue}
+format-underline = ${colors.orange}
 
 format-warn = Temp: <label-warn>
 format-warn-underline = ${colors.alert}

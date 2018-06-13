@@ -45,7 +45,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export GOROOT=/usr/src/go
 export GOPATH=$HOME/go
 #export GOROOT=/usr/src/go/
-PATH="/usr/local/bin:/usr/local/sbin/:~/.scripts/:$PATH:$GOROOT/bin"
+PATH="/usr/local/bin:/usr/local/sbin/:$HOME/.scripts/:$PATH:$GOROOT/bin"
 HISTFILE=$HOME/.zhistory
 HISTSIZE=1000
 SAVEHIST=1000

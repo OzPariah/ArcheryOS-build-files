@@ -85,18 +85,19 @@
 \BOOKMARK [3][-]{subsubsection.4.1.75}{unicornscan}{subsection.4.1}% 85
 \BOOKMARK [3][-]{subsubsection.4.1.76}{urlcrazy}{subsection.4.1}% 86
 \BOOKMARK [3][-]{subsubsection.4.1.77}{unix-privesc-check}{subsection.4.1}% 87
-\BOOKMARK [3][-]{subsubsection.4.1.78}{veracrypt}{subsection.4.1}% 88
-\BOOKMARK [3][-]{subsubsection.4.1.79}{wapiti}{subsection.4.1}% 89
-\BOOKMARK [3][-]{subsubsection.4.1.80}{websploit}{subsection.4.1}% 90
-\BOOKMARK [3][-]{subsubsection.4.1.81}{wfuzz}{subsection.4.1}% 91
-\BOOKMARK [3][-]{subsubsection.4.1.82}{whois}{subsection.4.1}% 92
-\BOOKMARK [3][-]{subsubsection.4.1.83}{wifit}{subsection.4.1}% 93
-\BOOKMARK [3][-]{subsubsection.4.1.84}{wireshark-gtk}{subsection.4.1}% 94
-\BOOKMARK [3][-]{subsubsection.4.1.85}{wpscan}{subsection.4.1}% 95
-\BOOKMARK [3][-]{subsubsection.4.1.86}{zaproxy}{subsection.4.1}% 96
-\BOOKMARK [3][-]{subsubsection.4.1.87}{zmap}{subsection.4.1}% 97
-\BOOKMARK [1][-]{section.5}{Known bugs and issues}{}% 98
-\BOOKMARK [2][-]{subsection.5.1}{Screen size}{section.5}% 99
-\BOOKMARK [2][-]{subsection.5.2}{Ranger image preview}{section.5}% 100
-\BOOKMARK [2][-]{subsection.5.3}{Found more bugs?}{section.5}% 101
-\BOOKMARK [1][-]{section.6}{Thanks}{}% 102
+\BOOKMARK [3][-]{subsubsection.4.1.78}{Veil-Evasion}{subsection.4.1}% 88
+\BOOKMARK [3][-]{subsubsection.4.1.79}{veracrypt}{subsection.4.1}% 89
+\BOOKMARK [3][-]{subsubsection.4.1.80}{wapiti}{subsection.4.1}% 90
+\BOOKMARK [3][-]{subsubsection.4.1.81}{websploit}{subsection.4.1}% 91
+\BOOKMARK [3][-]{subsubsection.4.1.82}{wfuzz}{subsection.4.1}% 92
+\BOOKMARK [3][-]{subsubsection.4.1.83}{whois}{subsection.4.1}% 93
+\BOOKMARK [3][-]{subsubsection.4.1.84}{wifit}{subsection.4.1}% 94
+\BOOKMARK [3][-]{subsubsection.4.1.85}{wireshark-gtk}{subsection.4.1}% 95
+\BOOKMARK [3][-]{subsubsection.4.1.86}{wpscan}{subsection.4.1}% 96
+\BOOKMARK [3][-]{subsubsection.4.1.87}{zaproxy}{subsection.4.1}% 97
+\BOOKMARK [3][-]{subsubsection.4.1.88}{zmap}{subsection.4.1}% 98
+\BOOKMARK [1][-]{section.5}{Known bugs and issues}{}% 99
+\BOOKMARK [2][-]{subsection.5.1}{Screen size}{section.5}% 100
+\BOOKMARK [2][-]{subsection.5.2}{Ranger image preview}{section.5}% 101
+\BOOKMARK [2][-]{subsection.5.3}{Found more bugs?}{section.5}% 102
+\BOOKMARK [1][-]{section.6}{Thanks}{}% 103

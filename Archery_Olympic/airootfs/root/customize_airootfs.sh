@@ -30,7 +30,7 @@ systemctl set-default multi-user.target
 
 chmod +x /etc/NetworkManager/dispatcher.d/99-wlan
 
-pacman -Syyu
+pacman -Syyu yaourt
 
 yaourt -Syu --aur
 

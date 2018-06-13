@@ -134,17 +134,12 @@ cd /opt/movfuscator
 ./build.sh
 sudo ./install.sh
 
-# Setup Openvas
-#systemctl restart redis
-#openvas-manage-certs -a
-#greenbone-nvt-sync
-#greenbone-scapdata-sync
-#greenbone-certdata-sync
-#systemctl start openvas-scanner
-#openvasmd --rebuild --progress
+ln -sf /opt/Veil-Evasion/setup/setup.sh /usr/bin/Veil-Evasion-Setup
+ln -sf /opt/Veil-Evasion/Veil-Evasion.py /usr/bin/Veil-Evasion
 
+pacman -Syyu yaourt
 
-pacman -Syyu
+yaourt -noconfirm -Syu --aur
 
 cd
 

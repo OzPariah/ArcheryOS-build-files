@@ -174,32 +174,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.1.77}unix-privesc-check}{107}{subsubsection.4.1.77}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.78}veracrypt}{107}{subsubsection.4.1.78}
+\contentsline {subsubsection}{\numberline {4.1.78}Veil-Evasion}{107}{subsubsection.4.1.78}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.79}wapiti}{108}{subsubsection.4.1.79}
+\contentsline {subsubsection}{\numberline {4.1.79}veracrypt}{108}{subsubsection.4.1.79}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.80}websploit}{110}{subsubsection.4.1.80}
+\contentsline {subsubsection}{\numberline {4.1.80}wapiti}{108}{subsubsection.4.1.80}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.81}wfuzz}{110}{subsubsection.4.1.81}
+\contentsline {subsubsection}{\numberline {4.1.81}websploit}{111}{subsubsection.4.1.81}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.82}whois}{113}{subsubsection.4.1.82}
+\contentsline {subsubsection}{\numberline {4.1.82}wfuzz}{111}{subsubsection.4.1.82}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.83}wifit}{114}{subsubsection.4.1.83}
+\contentsline {subsubsection}{\numberline {4.1.83}whois}{113}{subsubsection.4.1.83}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.84}wireshark-gtk}{115}{subsubsection.4.1.84}
+\contentsline {subsubsection}{\numberline {4.1.84}wifit}{114}{subsubsection.4.1.84}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.85}wpscan}{116}{subsubsection.4.1.85}
+\contentsline {subsubsection}{\numberline {4.1.85}wireshark-gtk}{116}{subsubsection.4.1.85}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.86}zaproxy}{119}{subsubsection.4.1.86}
+\contentsline {subsubsection}{\numberline {4.1.86}wpscan}{116}{subsubsection.4.1.86}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.87}zmap}{119}{subsubsection.4.1.87}
+\contentsline {subsubsection}{\numberline {4.1.87}zaproxy}{119}{subsubsection.4.1.87}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Known bugs and issues}{122}{section.5}
+\contentsline {subsubsection}{\numberline {4.1.88}zmap}{119}{subsubsection.4.1.88}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1}Screen size}{122}{subsection.5.1}
+\contentsline {section}{\numberline {5}Known bugs and issues}{123}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2}Ranger image preview}{122}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.1}Screen size}{123}{subsection.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3}Found more bugs?}{122}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.2}Ranger image preview}{123}{subsection.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Thanks}{123}{section.6}
+\contentsline {subsection}{\numberline {5.3}Found more bugs?}{123}{subsection.5.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Thanks}{124}{section.6}

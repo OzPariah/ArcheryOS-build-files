@@ -7,9 +7,7 @@ gparted
 firefox
 rxvt-unicode
 mlocate
-conky
 fakeroot
-thefuck
 ranger
 vim
 tmux
@@ -30,8 +28,9 @@ unzip
 w3m
 newsboat
 #firefox-vim-vixen
+firefox-umatrix
 firefox-ublock-origin
-firefox-noscript
+#firefox-noscript
 firefox-extension-https-everywhere
 firefox-extension-privacybadger
 polybar-git
@@ -79,7 +78,6 @@ zaproxy
 wpscan
 netdiscover
 rockyou
-# New tools
 android-apktool
 radare2
 radare2-cutter
@@ -118,10 +116,10 @@ rkhunter
 hashdeep
 steghide
 veracrypt
+joomscan
 
 # Tor
 tor
-torsocks
 proxychains
 tor-browser
 
@@ -167,17 +165,24 @@ i3-gaps
 i3blocks
 betterlockscreen
 i3status
-rofi
-compton
 feh
 xautolock
-lxappearance
 unclutter
+imagemagick
+
+### Openbox
+#openbox
+#obconf
+
+### Awesome
+awesome
+
+### Window Managers
+rofi
+compton
 ttf-inconsolata
 ttf-dejavu
 powerline
-xfce4-appfinder
-imagemagick
 
 ### installer
 wipe

@@ -173,7 +173,6 @@ Mod+F1 will show this document at any time
 	\item \textbf{Mod+Shift+c} --- Turns off gaps
 	\item \textbf{Mod+u} --- Next song
 	\item \textbf{Mod+y} --- Previous song
-	\item \textbf{Mod+\`} --- Changes to a random wallpaper from /usr/share/wallpapers
 \end{itemize}
 
 \subsubsection{Programs}
@@ -181,8 +180,8 @@ Mod+F1 will show this document at any time
 	\item \textbf{Mod+Shift+a} --- Audio (pavucontrol)
 	\item \textbf{Mod+b} --- Browser (firefox)
 	\item \textbf{Mod+i} --- System information (htop)
-	\item \textbf{Mod+Shift+m} --- Music (ncmpcpp)
-	\item \textbf{Mod+m} --- Mute audio
+	\item \textbf{Mod+m} --- Music (ncmpcpp)
+	\item \textbf{Mod+Shift+m} --- Mute audio
 	\item \textbf{Mod+p} --- Play/pause music
 	\item \textbf{Mod+Shift+p} --- Take screenshot (scrot)
 	\item \textbf{Mod+r} --- File manager (ranger)
@@ -2058,6 +2057,12 @@ Usage: john [OPTIONS] [PASSWORD-FILES]
 --list=WHAT               list capabilities, see --list=help or doc/OPTIONS
 --format=NAME             force hash of type NAME. The supported formats can
                           be seen with --list=formats and --list=subformats
+\end{lstlisting}
+
+\subsubsection{joomscan}
+OWASP JoomScan (short for [Joom]la Vulnerability [Scan]ner) is an opensource project in perl programming language to detect Joomla CMS vulnerabilities and analysis them.
+\begin{lstlisting}
+[root@ArcheryOS ~]# joomscan
 \end{lstlisting}
 
 \subsubsection{kismet}
@@ -4255,6 +4260,35 @@ unix-priv-esc is a script to run post exploitation to find misconfigurations and
 # Move to victem computer, and run:
 [root@ArcheryOS ~]# ./unix-privesc-check
 \end{lstlisting}
+
+\subsubsection{Veil-Evasion}
+Veil-Evasion is a tool designed to generate metasploit payloads that bypass common anti-virus solutions.
+\begin{lstlisting}
+[root@ArcheryOS ~]# Veil-Evasion-Setup
+[root@ArcheryOS ~]# veil-evasion
+=========================================================================
+ Veil-Evasion | [Version]: 2.28.2
+=========================================================================
+ [Web]: https://www.veil-framework.com/ | [Twitter]: @VeilFramework
+=========================================================================
+
+ Main Menu
+
+	51 payloads loaded
+
+ Available Commands:
+
+	use         	Use a specific payload
+	info        	Information on a specific payload
+	list        	List available payloads
+	update      	Update Veil-Evasion to the latest version
+	clean       	Clean out payload folders
+	checkvt     	Check payload hashes vs. VirusTotal
+	exit        	Exit Veil-Evasion
+
+ [menu>>]:
+\end{lstlisting}
+
 
 \subsubsection{veracrypt}
 VeraCrypt is a fork of the discontinued TrueCrypt project. Many security improvements have been implemented and issues raised by TrueCrypt code audits have been fixed. VeraCrypt features optimized implementations of cryptographic hash functions and ciphers which boost performance on modern CPUs.

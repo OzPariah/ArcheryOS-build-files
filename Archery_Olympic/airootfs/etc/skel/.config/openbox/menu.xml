@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-editors-menu" label="Editors">
+  <item label="Vim">
+    <action name="Execute">
+      <command>urxvt -e vim</command>
+    </action>
+  </item>
+  <item label="Nano">
+    <action name="Execute">
+      <command>urxvt -e nano</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-term-menu" label="Terminals">
+  <item label="Rxvt Unicode">
+    <action name="Execute">
+      <command>urxvt</command>
+    </action>
+  </item>
+  <item label="Xterm">
+    <action name="Execute">
+      <command>xterm</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-net-menu" label="Internet">
+  <item label="Firefox">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="w3m">
+    <action name="Execute">
+      <command>urxvt -e w3m www.duckduckgo.com</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-multimedia-menu" label="Multimedia">
+  <item label="ncmpcpp">
+    <action name="Execute">
+      <command>urxvt -e ncmpcpp</command>
+    </action>
+  </item>
+  <item label="Pulseaudio">
+    <action name="Execute">
+      <command>pavucontrol</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-fileman-menu" label="File Managers">
+  <item label="Ranger">
+    <action name="Execute">
+      <command>urxvt -e ranger</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-recon-menu" label="Information Gathering">
+	<item label="dirb">
+    <action name="Execute">
+      <command>urxvt -e archery-exec dirb</command>
+    </action>
+  </item>
+  <item label="dirbuster">
+    <action name="Execute">
+      <command>urxvt -e archery-exec dirbuster --help</command>
+    </action>
+  </item>
+  <item label="intrace">
+    <action name="Execute">
+      <command>urxvt -e archery-exec intrace</command>
+    </action>
+  </item>
+  <item label="maltego">
+    <action name="Execute">
+      <command>maltego</command>
+    </action>
+  </item>
+  <item label="masscan">
+    <action name="Execute">
+      <command>urxvt -e archery-exec masscan --help</command>
+    </action>
+  </item>
+  <item label="miranda">
+    <action name="Execute">
+      <command>urxvt -e archery-exec -h</command>
+    </action>
+  </item>
+  <item label="nbtscan">
+    <action name="Execute">
+      <command>urxvt -e archery-exec nbtscan</command>
+    </action>
+  </item>
+  <item label="Netdiscover">
+    <action name="Execute">
+      <command>urxvt -e zsh 'netdiscover -h</command>
+    </action>
+  </item>
+  <item label="Nikto">
+    <action name="Execute">
+      <command>urxvt -e zsh 'nikto -Help</command>
+    </action>
+  </item>
+  <item label="Nmap">
+    <action name="Execute">
+      <command>urxvt -e zsh 'nmap -h</command>
+    </action>
+  </item>
+  <item label="smbmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec smbmap --help</command>
+    </action>
+  </item>
+  <item label="sslscan">
+    <action name="Execute">
+      <command>urxvt -e archery-exec sslscan --help</command>
+    </action>
+  </item>
+  <item label="swaks">
+    <action name="Execute">
+      <command>urxvt -e archery-exec swaks --help</command>
+    </action>
+  </item>
+  <item label="thc ipv6 setup">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thc-ipv6-setup.sh</command>
+    </action>
+  </item>
+  <item label="thcping6">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thcping6</command>
+    </action>
+  </item>
+  <item label="thcsyn6">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thcsyn6</command>
+    </action>
+  </item>
+  <item label="Unicornscan">
+    <action name="Execute">
+      <command>urxvt -e zsh 'unicornscan -h</command>
+    </action>
+  </item>
+  <item label="wfuzz">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wfuzz --help</command>
+    </action>
+  </item>
+  <item label="Whois">
+    <action name="Execute">
+      <command>urxvt -e zsh 'whois --help</command>
+    </action>
+  </item>
+  <item label="wireshark">
+    <action name="Execute">
+      <command>wireshark-gtk</command>
+    </action>
+  </item>
+  <item label="zmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec zmap --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-vuln-menu" label="Vulnerability Analysis">
+  <item label="Metasploit console">
+    <action name="Execute">
+      <command>urxvt -e msfconsole</command>
+    </action>
+  </item>
+  <item label="Nikto">
+    <action name="Execute">
+      <command>urxvt -e zsh 'nikto -Help</command>
+    </action>
+  </item>
+  <item label="openvas-setup">
+    <action name="Execute">
+      <command>urxvt -e archery-exec openvas-setup</command>
+    </action>
+  </item>
+  <item label="openvas-start">
+    <action name="Execute">
+      <command>urxvt -e archery-exec openvas-start</command>
+    </action>
+  </item>
+  <item label="openvas-stop">
+    <action name="Execute">
+      <command>urxvt -e archery-exec openvas-stop</command>
+    </action>
+  </item>
+  <item label="smbmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec smbmap --help</command>
+    </action>
+  </item>
+  <item label="SQLmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec sqlmap --help</command>
+    </action>
+  </item>
+  <item label="unix-privesc-check">
+    <action name="Execute">
+	    <command>urxvt -e archery-exec cd /opt/unix-privesc-check</command>
+    </action>
+  </item>
+  <item label="urlcrazy">
+    <action name="Execute">
+      <command>urxvt -e archery-exec urlcrazy --help</command>
+    </action>
+  </item>
+  <item label="wapiti">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wapiti --help</command>
+    </action>
+  </item>
+  <item label="websploit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec websploit</command>
+    </action>
+  </item>
+  <item label="wfuzz">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wfuzz --help</command>
+    </action>
+  </item>
+  <item label="wpscan">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wpscan --help</command>
+    </action>
+  </item>
+  <item label="Zaproxy">
+    <action name="Execute">
+      <command>zaproxy</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-web-menu" label="Web Analysis">
+  <item label="Burpsuite">
+    <action name="Execute">
+      <command>burpsuite</command>
+    </action>
+  </item>
+  <item label="lynis">
+    <action name="Execute">
+      <command>urxvt -e archery-exec lynis --help</command>
+    </action>
+  </item>
+  <item label="Nikto">
+    <action name="Execute">
+      <command>urxvt -e archery-exec nikto -Help</command>
+    </action>
+  </item>
+  <item label="SQLmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec sqlmap --help</command>
+    </action>
+  </item>
+  <item label="urlcrazy">
+    <action name="Execute">
+      <command>urxvt -e archery-exec urlcrazy --help</command>
+    </action>
+  </item>
+  <item label="wapiti">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wapiti --help</command>
+    </action>
+  </item>
+  <item label="websploit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec websploit</command>
+    </action>
+  </item>
+  <item label="wfuzz">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wfuzz --help</command>
+    </action>
+  </item>
+  <item label="wpscan">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wpscan --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-exploit-menu" label="Exploitation Tools">
+  <item label="Metasploit console">
+    <action name="Execute">
+      <command>urxvt -e msfconsole</command>
+    </action>
+  </item>
+  <item label="msfd">
+    <action name="Execute">
+      <command>urxvt -e archery-exec msfd -h</command>
+    </action>
+  </item>
+  <item label="msfpc">
+    <action name="Execute">
+      <command>urxvt -e archery-exec msfpc</command>
+    </action>
+  </item>
+  <item label="msfrpc">
+    <action name="Execute">
+      <command>urxvt -e archery-exec msfrpc -h</command>
+    </action>
+  </item>
+  <item label="msfrpcd">
+    <action name="Execute">
+      <command>urxvt -e archery-exec msfrpcd -h</command>
+    </action>
+  </item>
+  <item label="Msfvenom">
+    <action name="Execute">
+      <command>urxvt -e zsh 'msfvenom -h</command>
+    </action>
+  </item>
+  <item label="searchsploit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec searchsploit --help</command>
+    </action>
+  </item>
+  <item label="smbmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec smbmap --help</command>
+    </action>
+  </item>
+  <item label="Social engineering toolkit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec setoolkit</command>
+    </action>
+  </item>
+  <item label="SQLmap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec sqlmap --help</command>
+    </action>
+  </item>
+  <item label="thc ipv6 setup">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thc-ipv6-setup.sh</command>
+    </action>
+  </item>
+  <item label="thcping6">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thcping6</command>
+    </action>
+  </item>
+  <item label="thcsyn6">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thcsyn6</command>
+    </action>
+  </item>
+  <item label="websploit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec websploit</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-post-menu" label="Post Exploitation">
+	<item label="chntpw">
+    <action name="Execute">
+      <command>urxvt -e archery-exec chntpw -h</command>
+    </action>
+  </item>
+  <item label="cymothoa">
+    <action name="Execute">
+      <command>urxvt -e archery-exec cymothoa -h</command>
+    </action>
+  </item>
+  <item label="exe2hex">
+    <action name="Execute">
+      <command>urxvt -e archery-exec exe2hex</command>
+    </action>
+  </item>
+  <item label="mimikatz">
+    <action name="Execute">
+      <command>urxvt -e archery-exec cd /opt/mimikatz</command>
+    </action>
+  </item>
+  <item label="Metasploit console">
+    <action name="Execute">
+      <command>urxvt -e msfconsole</command>
+    </action>
+  </item>
+  <item label="Msfvenom">
+    <action name="Execute">
+      <command>urxvt -e zsh 'msfvenom -h</command>
+    </action>
+  </item>
+  <item label="powersploit">
+    <action name="Execute">
+	    <command>urxvt -e archery-exec cd /opt/powersploit</command>
+    </action>
+  </item>
+  <item label="unix-privesc-check">
+    <action name="Execute">
+	    <command>urxvt -e archery-exec cd /opt/unix-privesc-check</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-passwd-menu" label="Password Attacks">
+  <item label="chntpw">
+    <action name="Execute">
+	    <command>urxvt -e archery-exec chntpw -h ; zsh"</command>
+    </action>
+  </item>
+  <item label="cowpatty">
+    <action name="Execute">
+      <command>urxvt -e archery-exec cowpatty</command>
+    </action>
+  </item>
+  <item label="crowbar">
+    <action name="Execute">
+      <command>urxvt -e archery-exec crowbar -h</command>
+    </action>
+  </item>
+  <item label="crunch">
+    <action name="Execute">
+      <command>urxvt -e archery-exec crunch --help</command>
+    </action>
+  </item>
+  <item label="cupp">
+    <action name="Execute">
+      <command>urxvt -e archery-exec cupp3 -h</command>
+    </action>
+  </item>
+  <item label="Hashcat">
+    <action name="Execute">
+	    <command>urxvt -e archery-exec hashcat -h ; bash'</command>
+    </action>
+  </item>
+  <item label="Hydra">
+    <action name="Execute">
+      <command>urxvt -e archery-exec hydra -h ; zsh '</command>
+    </action>
+  </item>
+  <item label="John the ripper">
+    <action name="Execute">
+      <command>urxvt -e archery-exec john -h</command>
+    </action>
+  </item>
+  <item label="medusa">
+    <action name="Execute">
+      <command>urxvt -e archery-exec medusa --help</command>
+    </action>
+  </item>
+  <item label="ncrack">
+    <action name="Execute">
+      <command>urxvt -e archery-exec ncrack --help</command>
+    </action>
+  </item>
+  <item label="ophcrack">
+    <action name="Execute">
+      <command>urxvt -e archery-exec ophcrack -h</command>
+    </action>
+  </item>
+  <item label="pyrit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec pyrit -h</command>
+    </action>
+  </item>
+  <item label="twofi">
+    <action name="Execute">
+      <command>urxvt -e archery-exec twofi --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="wifi-aircrack-menu" label="aircrack-ng">
+  <item label="airbase-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airbase-ng --help</command>
+    </action>
+  </item>
+  <item label="aircrack-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec aircrack-ng --help</command>
+    </action>
+  </item>
+  <item label="airdecap-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airdecap-ng --help</command>
+    </action>
+  </item>
+  <item label="airdecloak-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airdecloak-ng --help</command>
+    </action>
+  </item>
+  <item label="aireplay-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec aireplay-ng --help</command>
+    </action>
+  </item>
+  <item label="airmon-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airmon-ng --help</command>
+    </action>
+  </item>
+  <item label="airodump-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airodump-ng --help</command>
+    </action>
+  </item>
+  <item label="airolib-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airolib-ng --help</command>
+    </action>
+  </item>
+  <item label="airserv-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airserv-ng --help</command>
+    </action>
+  </item>
+  <item label="airtun-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airtun-ng --help</command>
+    </action>
+  </item>
+  <item label="airventriloquist-ng">
+    <action name="Execute">
+      <command>urxvt -e archery-exec airventriloquist-ng --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-wifi-menu" label="Wireless Testing">
+  <menu id="wifi-aircrack-menu"/>
+  <item label="bettercap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec bettercap --help</command>
+    </action>
+  </item>
+  <item label="cowpatty">
+    <action name="Execute">
+      <command>urxvt -e archery-exec cowpatty</command>
+    </action>
+  </item>
+  <item label="Fluxion">
+    <action name="Execute">
+      <command>urxvt -e fluxion</command>
+    </action>
+  </item>
+  <item label="giskismet">
+    <action name="Execute">
+      <command>urxvt -e archery-exec giskismet --help</command>
+    </action>
+  </item>
+  <item label="Kismet">
+    <action name="Execute">
+      <command>urxvt -e archery-exec kismet_server -h</command>
+    </action>
+  </item>
+  <item label="mdk3">
+    <action name="Execute">
+      <command>urxvt -e archery-exec mdk3 --help</command>
+    </action>
+  </item>
+  <item label="pixiewps">
+    <action name="Execute">
+      <command>urxvt -e archery-exec pixiewps -h</command>
+    </action>
+  </item>
+  <item label="reaver">
+    <action name="Execute">
+      <command>urxvt -e archery-exec reaver --help</command>
+    </action>
+  </item>
+  <item label="wifite">
+    <action name="Execute">
+      <command>urxvt -e archery-exec wifite --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-sniff-menu" label="Sniffing Spoofing">
+  <item label="bettercap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec bettercap --help</command>
+    </action>
+  </item>
+  <item label="dnsspoof">
+    <action name="Execute">
+      <command>urxvt -e archery-exec dnsspoof -h</command>
+    </action>
+  </item>
+  <item label="ettercap">
+    <action name="Execute">
+      <command>urxvt -e archery-exec ettercap --help</command>
+    </action>
+  </item>
+  <item label="httrack">
+    <action name="Execute">
+      <command>urxvt -e archery-exec httrack --help</command>
+    </action>
+  </item>
+  <item label="Kismet">
+    <action name="Execute">
+      <command>urxvt -e archery-exec kismet_server -h</command>
+    </action>
+  </item>
+  <item label="macchanger">
+    <action name="Execute">
+      <command>urxvt -e archery-exec macchanger --help</command>
+    </action>
+  </item>
+  <item label="mitmf">
+    <action name="Execute">
+      <command>urxvt -e archery-exec mitmf --help</command>
+    </action>
+  </item>
+  <item label="thc ipv6 setup">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thc-ipv6-setup.sh</command>
+    </action>
+  </item>
+  <item label="thcping6">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thcping6</command>
+    </action>
+  </item>
+  <item label="thcsyn6">
+    <action name="Execute">
+      <command>urxvt -e archery-exec thcsyn6</command>
+    </action>
+  </item>
+  <item label="wireshark">
+    <action name="Execute">
+      <command>wireshark-gtk</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-foren-menu" label="Digital Forensics">
+  <item label="Autopsy">
+    <action name="Execute">
+      <command>autopsy</command>
+    </action>
+  </item>
+  <item label="chkrootkit">
+    <action name="Execute">
+      <command>urxvt -e archery-exec chkrootkit</command>
+    </action>
+  </item>
+  <item label="hashdeep">
+    <action name="Execute">
+      <command>urxvt -e archery-exec hashdeep -h</command>
+    </action>
+  </item>
+  <item label="rkhunter">
+    <action name="Execute">
+      <command>urxvt -e archery-exec rkhunter --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="apps-pentest-reveng-menu" label="Reverse Engineering">
+  <item label="Cutter (radare2 gui)">
+    <action name="Execute">
+      <command>Cutter</command>
+    </action>
+  </item>
+  <item label="gdb">
+    <action name="Execute">
+      <command>urxvt -e archery-exec gdb --help</command>
+    </action>
+  </item>
+  <item label="Radare2">
+    <action name="Execute">
+      <command>urxvt -e archery-exec r2 --help</command>
+    </action>
+  </item>
+</menu>
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+  <separator />
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+  <item label="Shutdown">
+    <action name="Execute">
+	    <command>systemctl poweroff</command>
+      <prompt>Do you want to shutdown?</prompt>
+    </action>
+  </item>
+  <item label="Reboot">
+    <action name="Execute">
+	    <command>systemctl restart</command>
+      <prompt>Do you want to reboot?</prompt>
+    </action>
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <item label="Terminal">
+    <action name="Execute">
+	    <command>urxvt</command>
+    </action>
+  </item>
+  <item label="File manager">
+    <action name="Execute">
+	    <command>urxvt -e ranger</command>
+    </action>
+  </item>
+  <item label="Firefox">
+    <action name="Execute">
+	    <command>firefox</command>
+    </action>
+  </item>
+  <menu id="apps-editors-menu"/>
+  <menu id="apps-net-menu"/>
+  <menu id="apps-multimedia-menu"/>
+  <menu id="apps-term-menu"/>
+  <menu id="apps-fileman-menu"/>
+  <separator label="Pentesting" />
+  <menu id="apps-pentest-recon-menu"/>
+  <menu id="apps-pentest-vuln-menu"/>
+  <menu id="apps-pentest-web-menu"/>
+  <menu id="apps-pentest-exploit-menu"/>
+  <menu id="apps-pentest-post-menu"/>
+  <menu id="apps-pentest-passwd-menu"/>
+  <menu id="apps-pentest-wifi-menu"/>
+  <menu id="apps-pentest-sniff-menu"/>
+  <menu id="apps-pentest-foren-menu"/>
+  <menu id="apps-pentest-reveng-menu"/>
+  <menu id="apps-pentest-crypt-menu"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+</menu>
+
+</openbox_menu>

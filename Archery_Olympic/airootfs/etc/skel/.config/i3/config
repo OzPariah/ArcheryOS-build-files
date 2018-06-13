@@ -50,7 +50,7 @@ exec --no-startup-id xautolock -time 15 -locker "mpc pause; betterlockscreen"
 exec --no-startup-id compton -b --backend xrender
 # Set background
 exec --no-startup-id sh ~/.fehbg
-exec --no-startup-id ~/.scripts/polybar_launch
+exec --no-startup-id ~/.scripts/polybar_i3
 # Documentation
 exec --no-startup-id zathura ~/Documents/Documentation.pdf
 # hides mouse after certain amount of time
@@ -153,9 +153,6 @@ bindsym $mod+minus 		workspace prev
 
 # Toggle between last workspace
 bindsym $mod+Tab 		workspace back_and_forth
-
-# Change wallpaper
-bindsym $mod+grave 		exec --no-startup-id feh --bg-fill /usr/share/wallpapers/$(ls /usr/share/wallpapers| shuf -n 1)
 
 # Toggle floating focus
 bindsym $mod+space 		focus mode_toggle
