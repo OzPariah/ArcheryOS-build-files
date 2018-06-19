@@ -30,7 +30,7 @@
 \lstset{frame=tb,
   language=Bash,
   aboveskip=3mm,
-  belowskip=3mm,
+  belowskip=3mm
   showstringspaces=false,
   columns=flexible,
   basicstyle={\small\ttfamily},
@@ -56,31 +56,32 @@
 \pagebreak
 
 \section{Introduction}
-ArcheryOS is a rolling release arch based distribution with a distinct focus on penetration testing, digital forensics, programming, and privacy. It uses the default arch linux repositories, to ensure your software is always kept up to date.
+ArcheryOS is a rolling release Arch based distribution with a distinct focus on Pentration testing, privacy, digital forensics and programming.
+Due to this ArcheryOS not only has full access to the standard Arch and AUR repositories ensuring that software is kept as up to date as possible but also boasts a well rounded toolkit for penetration testing.
 \subsection{Philosophy of ArcheryOS}
 \begin{itemize}
 	\item Simple
 
-		ArcheryOS is designed to be simple to use and install, coming with a curses installer to simplify the arch installation process. It comes preinstalled with a minimal window manager of your choice, such as i3, openbox, or awesome.
+		ArcheryOS has a simple install process using a curses installer to make the arch install process as easy and painless as possible. ArcheryOS provides you with a choice of several minimal window managers all preconfigured to allow you to get started with next to no configuration required.
 
 		\emph{Please note the installer is an offline installation program, simply copying all installed programs to the selected disk.  Please update after installation}
 	
 	\item Privacy
 
-		ArcheyOS has been configured with privacy in mind. Firefox has been configured to minimize any data leaks that may identify the user, such as browser fingerprinting and WebRTC IP leaks. 
+		Privacy is at the forefront of the philosophy of ArcheryOS and Firefox comes preconfigured to ensure that browser fingerprinting and the \newline possibility of WebRTC IP leaks are minimized. 
 		
 		You can visit \href{https://www.privacytools.io/}{privacytools} for more information.
 
-		You can also visit \href{https://panopticlick.eff.org/}{panopticlick} to check your browser fingerprint and \href{https://www.privacytools.io/webrtc.html}{privacytools webrtc check} to check for WebRTC IP leaks.
+		You can also visit \href{https://panopticlick.eff.org/}{panopticlick} to check your browser fingerprint and\newline \href{https://www.privacytools.io/webrtc.html}{privacytools webrtc check} to check for WebRTC IP leaks.
 	
 	\item Penetration Testing
 
-		ArcheryOS has a suite of 61 basic and essential tools that every aspiring pentester should have. Unlike other pentesting centric distributions, we believe that providing hundreds of tools, that many people have no idea what they do, let alone how to use them, is not helpful. ArcheryOS comes with a much smaller selection, and documentation on how to use each and every one of them. When the time comes that this suite of tools become insufficient, the user may install any additional programs from the arch repositories or AUR that better suit the target the user is attacking.
+		Unlike other penetration testing distributions that provide an\newline overwhelming library of tools preinstalled the goal of ArcheryOS is to\newline provide a perfect launching point for a personalized pentesting experience\newline To make this possible ArcheryOS comes preinstalled with a suite of 61 essential tools and extensive documentation along with sane configs to ensure that you can get started immediately and expand your toolkit as required.
 \end{itemize}
 
 \pagebreak
 \section{Installation}
-ArcheryOS works as both a live boot OS and an installed OS.\@
+ArcheryOS is capable of being used in a liveboot setting as well as being installed onto your machine.\@
 
 \noindent
 To install ArcheryOS, press \textbf{Mod+Shift+F12}.
@@ -173,6 +174,7 @@ Mod+F1 will show this document at any time
 	\item \textbf{Mod+Shift+c} --- Turns off gaps
 	\item \textbf{Mod+u} --- Next song
 	\item \textbf{Mod+y} --- Previous song
+	\item \textbf{Mod+\`} --- Changes to a random wallpaper from /usr/share/wallpapers
 \end{itemize}
 
 \subsubsection{Programs}
@@ -180,8 +182,8 @@ Mod+F1 will show this document at any time
 	\item \textbf{Mod+Shift+a} --- Audio (pavucontrol)
 	\item \textbf{Mod+b} --- Browser (firefox)
 	\item \textbf{Mod+i} --- System information (htop)
-	\item \textbf{Mod+m} --- Music (ncmpcpp)
-	\item \textbf{Mod+Shift+m} --- Mute audio
+	\item \textbf{Mod+Shift+m} --- Music (ncmpcpp)
+	\item \textbf{Mod+m} --- Mute audio
 	\item \textbf{Mod+p} --- Play/pause music
 	\item \textbf{Mod+Shift+p} --- Take screenshot (scrot)
 	\item \textbf{Mod+r} --- File manager (ranger)
@@ -281,7 +283,7 @@ Airbase-ng is a multi-purpose tool aimed at attacking clients as opposed to the 
 	\item Ability to manipulate and resend packets
 	\item Ability to encrypt sent packets and decrypt received packets
 \end{itemize}
-The main idea is of the implementation is that it should encourage clients to  associate  with  the fake AP, not prevent them from accessing the real AP.
+The main idea of implementation is to encourage clients to  associate  with  the fake AP, not prevent them from accessing the real AP.
 \begin{lstlisting}
 [root@ArcheryOS ~]# airbase-ng --help
 
@@ -651,7 +653,7 @@ airolib-ng  is  a tool for the aircrack-ng suite to store and manage essid and p
 \end{lstlisting}
 
 \subsubsection{airserv-ng}
-airserv-ng is a wireless card server which allows multiple wireless application programs to independently use a wireless card via  a  client-server TCP network connection. All operating system and wireless card driver specific code is incorporated into the server. This eliminates the  need  for each  wireless application to contain the complex wireless card and driver logic. It is also supports multiple operating systems.
+airserv-ng is a wireless card server which allows multiple wireless application programs to independently use a wireless card via  a  client-server TCP network connection. All operating system and wireless card driver specific code is incorporated into the server. This eliminates the  need  for each  wireless application to contain the complex wireless card and driver logic. It also supports multiple operating systems.
 \begin{lstlisting}
 [root@ArcheryOS ~]# airserv-ng -h
 
@@ -2057,12 +2059,6 @@ Usage: john [OPTIONS] [PASSWORD-FILES]
 --list=WHAT               list capabilities, see --list=help or doc/OPTIONS
 --format=NAME             force hash of type NAME. The supported formats can
                           be seen with --list=formats and --list=subformats
-\end{lstlisting}
-
-\subsubsection{joomscan}
-OWASP JoomScan (short for [Joom]la Vulnerability [Scan]ner) is an opensource project in perl programming language to detect Joomla CMS vulnerabilities and analysis them.
-\begin{lstlisting}
-[root@ArcheryOS ~]# joomscan
 \end{lstlisting}
 
 \subsubsection{kismet}
@@ -4260,35 +4256,6 @@ unix-priv-esc is a script to run post exploitation to find misconfigurations and
 # Move to victem computer, and run:
 [root@ArcheryOS ~]# ./unix-privesc-check
 \end{lstlisting}
-
-\subsubsection{Veil-Evasion}
-Veil-Evasion is a tool designed to generate metasploit payloads that bypass common anti-virus solutions.
-\begin{lstlisting}
-[root@ArcheryOS ~]# Veil-Evasion-Setup
-[root@ArcheryOS ~]# veil-evasion
-=========================================================================
- Veil-Evasion | [Version]: 2.28.2
-=========================================================================
- [Web]: https://www.veil-framework.com/ | [Twitter]: @VeilFramework
-=========================================================================
-
- Main Menu
-
-	51 payloads loaded
-
- Available Commands:
-
-	use         	Use a specific payload
-	info        	Information on a specific payload
-	list        	List available payloads
-	update      	Update Veil-Evasion to the latest version
-	clean       	Clean out payload folders
-	checkvt     	Check payload hashes vs. VirusTotal
-	exit        	Exit Veil-Evasion
-
- [menu>>]:
-\end{lstlisting}
-
 
 \subsubsection{veracrypt}
 VeraCrypt is a fork of the discontinued TrueCrypt project. Many security improvements have been implemented and issues raised by TrueCrypt code audits have been fixed. VeraCrypt features optimized implementations of cryptographic hash functions and ciphers which boost performance on modern CPUs.
